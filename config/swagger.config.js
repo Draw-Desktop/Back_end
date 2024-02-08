@@ -3,9 +3,9 @@ const SwaggerJsdoc = require("swagger-jsdoc");
 const options = {
     definition: {
         info: {
-            title: 'DD API',
+            title: 'UMC_SMU API',
             version: '1.0.0',
-            description: 'DD API with express, API 설명'
+            description: 'UMC_SMU API with express, API 설명'
         },
         host: 'localhost:3000',
         basepath: '../'
@@ -13,4 +13,4 @@ const options = {
     apis: ['./src/routes/*.js', './swagger/*']
 };
 
-export const specs = SwaggerJsdoc(options);
+module.exports.specs = SwaggerJsdoc(options);
