@@ -5,7 +5,6 @@ const baseResponse = require('../../config/response.status.js');
 //아이디 중복 확인
 exports.checkLoginIdExist = async (login_id) => {
     const EX_USER = await User.findOne({ where: { login_id: login_id } });
-
     if (EX_USER) return EX_USER;
     else return null;
 };

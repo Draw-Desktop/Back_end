@@ -1,4 +1,4 @@
-const authService = require('./authService.js');
+const authService = require('./auth.service.js');
 const { response, errResponse } = require('../../config/response.js');
 const baseResponse = require('../../config/response.status.js');
 

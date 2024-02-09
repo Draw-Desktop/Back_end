@@ -1,4 +1,4 @@
-const authController = require('./authController.js');
+const authController = require('./auth.controller.js');
 
 module.exports = function (app) {
     // 1.회원가입
