@@ -27,7 +27,7 @@ exports.join = async (userData) => {
         // 유저 생성
         const newUser = await authProvider.createUser({
             login_id, 
-            password, 
+            password: hashedPassword,
             email
         });
         return response(baseResponse.SUCCESS_REGISTRATION, newUser);
