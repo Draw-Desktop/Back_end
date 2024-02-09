@@ -24,7 +24,7 @@ exports.imageUploader = multer({
         s3: s3, // S3 객체
         bucket: process.env.aws_s3_bucket_name, // Bucket 이름
         contentType: multerS3.AUTO_CONTENT_TYPE, // Content-type, 자동으로 찾도록 설정
-        key: (req, file, callback) => {
+        key: (req, file, callback) => { 
             // 파일명
             const uploadDirectory = req.query.directory ?? ''; // 디렉토리 path 설정을 위해서
             const extension = path.extname(file.originalname); // 파일 이름 얻어오기

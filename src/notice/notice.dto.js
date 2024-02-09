@@ -2,10 +2,10 @@ const Notice = require('../../models/notice.js');
 const Image = require('../../models/image.js');
 
 exports.previewNoticeResponseDTO = async (noticeId, size) => {
-    if (noticeId == "undefined" || typeof noticeId == "undefined" || noticeId == null) {
+    if (noticeId === "undefined" || typeof noticeId === "undefined" || noticeId === null) {
         noticeId = 0;
     }
-
+    
     const EX_NOTICE = await Notice.findAll({
         order: [['id', 'DESC']],
         limit: parseInt(size),      // 불러올 개수
@@ -22,7 +22,7 @@ exports.previewNoticeResponseDTO = async (noticeId, size) => {
             },
         });
 
-        // 이미지 데이터만을 가져와서 img 속성에 추가
+        // img 속성에 값을 추가
         notice.img = images.map(img => img.dataValues);
         return notice;
     }));
