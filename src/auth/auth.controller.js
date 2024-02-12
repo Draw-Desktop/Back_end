@@ -15,3 +15,18 @@ exports.join = async (req, res, next) => {
         res.status(400).json({ success: false, message: error.message });
     }
 };
+
+//로그인
+exports.login = async (req, res, next) => {
+    try {
+        const { login_id, password } = req.body;
+        if (!login_id || !password) {
+            return res.send(errResponse(baseResponse.JOIN_EMPTY));
+        }
+        const result = await authService.login(login_id, password);
+        return res.send(result);
+    } catch (error) {
+        console.error(error);
+        return next(error);
+    }
+};

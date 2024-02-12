@@ -1,8 +1,8 @@
 const bcrypt = require('bcrypt');
 const authProvider = require('./auth.provider.js');
-const { encrypt, decrypt } = require('../../util/crypter.js');
-const { response, errResponse } = require('../../config/response.js');
+const { response, errResponse, getSuccessSignInJson } = require('../../config/response');
 const baseResponse = require('../../config/response.status.js');
+const jwtUtil = require('../../util/jwtUtil.js');
 
 //회원가입
 exports.join = async (userData) => {
@@ -38,6 +38,31 @@ exports.join = async (userData) => {
     } catch (error) {
         console.error(error);
         throw error;
+    }
+};
+
+//로그인
+exports.login = async (login_id, password) => {
+    try {
+        //학번 일치 확인
+        const user = await authProvider.checkLoginIdExist(login_id);
+        console.log(user);
+        console.log('id,', user.id);
+        if (!user) {
+            return errResponse(baseResponse.MEMBER_NOT_FOUND);
+        }
+        if (!user.password) {
+            return errResponse(baseResponse.MEMBER_NOT_FOUND);
+        }
+        //비밀번호 일치 확인
+        const comparePassword = await bcrypt.compare(password, user.password);
+        if (!comparePassword) {
+            return errResponse(baseResponse.WRONG_PASSWORD);
+        }
+        const aToken = jwtUtil.signAToken(user.id);
+        return getSuccessSignInJson(user.id, aToken);
+    } catch (error) {
+        console.error(error);
     }
 };
 
