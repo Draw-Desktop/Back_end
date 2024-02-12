@@ -3,6 +3,7 @@ const { promisify } = require('util');
 const moment = require('moment');
 
 module.exports = {
+
     signAToken: (userId) => {
         const payload = {
             userId: userId,

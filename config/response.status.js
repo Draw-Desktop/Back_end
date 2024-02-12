@@ -5,6 +5,8 @@ module.exports = {
     SUCCESS: { isSuccess: true, code: 2000, message: 'success!' },
     USER_CAN_SIGNUP: { isSuccess: true, code: 2001, message: '가입이 가능한 아이디입니다.' },
     SUCCESS_REGISTRATION: { isSuccess: true, code: 2002, message: '회원가입이 성공적으로 완료되었습니다.' },
+    SUCCESS_CREATE_LIKE: { isSuccess: true, code: 2003, message: '좋아요를 눌렀습니다.' },
+    SUCCESS_DELETE_LIKE: { isSuccess: true, code: 2004, message: '좋아요를 취소했습니다.' },
 
     //jwt
     JWT_TOKEN_NOT_FOUND: { isSuccess: false, code: 'JWT000', message: '토큰을 찾지 못해 사용자 인증을 할 수 없습니다.' },
@@ -14,6 +16,9 @@ module.exports = {
 
     JWT_GET_ACCESS_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT003', message: 'Access 토큰이 발급되었습니다. ' },
     JWT_GET_REFRESH_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT003', message: 'Refresh 토큰이 발급되었습니다. ' },
+
+    // common err
+    BAD_REQUEST: { isSuccess: false, code: 'COMMON001', message: '잘못된 요청입니다.' },
 
     // member err
     MEMBER_NOT_FOUND: { isSuccess: false, code: 'MEMBER4001', message: '사용자가 없습니다.' },
@@ -30,4 +35,11 @@ module.exports = {
         message: '비밀번호는 8자 이상이어야 하며, 영문과 숫자, 특수문자(!@#$%^&*_-)가 섞여 있어야 합니다.',
     },
     WRONG_PASSWORD: { isSuccess: false, code: 'MEMBER4006', message: '비밀번호가 틀렸습니다.' },
+
+    // post err
+    CREATION_FAILED: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'POST4001', message: '생성을 실패하였습니다.' },
+
+    // like err
+    LIKE_ALREADY_EXISTS: { isSuccess: false, code: 'LIKE4001', message: '이미 좋아요를 눌렀습니다.' },
+    LIKE_NOT_FOUND: { isSuccess: false, code: 'LIKE4002', message: '사용자가좋아요를 누르지 않았습니다' },
 };
