@@ -11,7 +11,7 @@ module.exports = class User extends Sequelize.Model {
                     autoIncrement: true,
                 },
                 login_id: {
-                    type: Sequelize.INTEGER,
+                    type: Sequelize.STRING,
                     allowNull: false,
                 },
                 password: {
