@@ -1,10 +1,9 @@
 const jwt = require('jsonwebtoken');
-const { response, errResponse, getSuccessSignInJson } = require('../config/response');
-const baseResponse = require('../config/response.status');
+const { response, errResponse, getSuccessSignInJson } = require('../../config/response.js');
+const baseResponse = require('../../config/response.status.js');
 
 exports.verifyAToken = (req, res, next) => {
     if (!req.headers.authorization) return res.send(errResponse(baseResponse.JWT_TOKEN_WRONG));
-
     try {
         const decoded = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
         res.locals.decoded = decoded;

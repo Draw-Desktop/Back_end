@@ -60,7 +60,7 @@ module.exports = class Post extends Sequelize.Model {
         Post.belongsTo(db.Category, { foreignKey: 'category_id' });
 
         // Post 모델과 LikePost 모델 간의 일대다 관계 설정
-        Post.hasMany(db.LikePost, { foreignKey: 'userId' });
+        Post.hasMany(db.LikePost, { foreignKey: 'post_id' });
         
         // Post 모델과 Link 모델 간의 일대다 관계 설정
         Post.hasMany(db.Link, { foreignKey: 'post_id' });
