@@ -37,6 +37,7 @@ module.exports = function () {
 
     //router
     require('../src/notice/notice.route')(app); //예시 라우트   notice.route.js를 통해 연결되는 route, controller, provider, service, dto, dao 는 예시이다. 추후 삭제 예정
+    require('../src/auth/auth.route.js')(app);
 
     // error handling
     app.use((req, res, next) => {
