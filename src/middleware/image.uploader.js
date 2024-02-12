@@ -5,10 +5,8 @@ const multerS3 = require('multer-s3');
 const { createUUID } = require('./uuid.js');
 const path = require('path');
 
-const { BaseError } = require('../../config/error');
+const { BaseError } = require('../../config/error.js');
 const { status } = require('../../config/response.status');
-
-// dotenv.config(); // .env 파일 사용
 
 const s3 = new AWS.S3({
     region: process.env.aws_s3_reagion,
@@ -24,7 +22,7 @@ exports.imageUploader = multer({
         s3: s3, // S3 객체
         bucket: process.env.aws_s3_bucket_name, // Bucket 이름
         contentType: multerS3.AUTO_CONTENT_TYPE, // Content-type, 자동으로 찾도록 설정
-        key: (req, file, callback) => { 
+        key: (req, file, callback) => {
             // 파일명
             const uploadDirectory = req.query.directory ?? ''; // 디렉토리 path 설정을 위해서
             const extension = path.extname(file.originalname); // 파일 이름 얻어오기
@@ -38,5 +36,5 @@ exports.imageUploader = multer({
         acl: 'public-read-write' // 파일 액세스 권한
     }),
     // 이미지 용량 제한 (5MB)
-    limits: { fileSize: 5 * 1024 * 1024 },
+    limits: { fileSize: 10 * 1024 * 1024 },
 });
