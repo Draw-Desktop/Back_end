@@ -60,7 +60,7 @@ exports.login = async (login_id, password) => {
         if (!comparePassword) {
             return errResponse(baseResponse.WRONG_PASSWORD);
         }
-        const aToken = jwtUtil.signAToken(user.id);
+        const aToken = jwtUtil.signAToken(user.user_id);
         return getSuccessSignInJson(user.id, aToken);
     } catch (error) {
         console.error(error);

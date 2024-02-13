@@ -6,20 +6,26 @@ module.exports = {
     SUCCESS_CREATE_HELP: { isSuccess: true, code: 2002, message: '요청이 성공적으로 접수되었습니다.' },
     USER_CAN_SIGNUP: { isSuccess: true, code: 2001, message: '가입이 가능한 아이디입니다.' },
     SUCCESS_REGISTRATION: { isSuccess: true, code: 2002, message: '회원가입이 성공적으로 완료되었습니다.' },
-    SUCCESS_CREATE_LIKE: { isSuccess: true, code: 2003, message: '좋아요를 눌렀습니다.' },
-    SUCCESS_DELETE_LIKE: { isSuccess: true, code: 2004, message: '좋아요를 취소했습니다.' },
+    SUCCESS_LOAD_ALL_CATEGORY: { isSuccess: true, code: 2003, message: '전체 카테고리 게시물을 성공적으로 불러왔습니다.' },
+    SUCCESS_LOAD_POPULAR_CATEGORY: { isSuccess: true, code: 2004, message: '인기 카테고리 게시물을 성공적으로 불러왔습니다.' },
+    SUCCESS_LOAD_POPULAR_WALLPAPER: { isSuccess: true, code: 2005, message: '인기 바탕화면 게시물을 성공적으로 불러왔습니다.' },
+    SUCCESS_POST: { isSuccess: true, code: 2006, message: '게시물이 성공적으로 작성되었습니다.' },
+    SUCCESS_SEARCH_TITLE: { isSuccess: true, code: 2007, message: '제목 검색으로 게시물을 불러왔습니다.' },
+    SUCCESS_SEARCH_CATEGORY: { isSuccess: true, code: 2008, message: '카테고리 검색으로 게시물을 불러왔습니다.' },
+    SUCCESS_SEARCH_USER: { isSuccess: true, code: 2009, message: '작성자 검색으로 게시물을 불러왔습니다.' },
+    SUCCESS_CREATE_LIKE: { isSuccess: true, code: 2010, message: '좋아요를 눌렀습니다.' },
+    SUCCESS_DELETE_LIKE: { isSuccess: true, code: 2011, message: '좋아요를 취소했습니다.' },
 
     //jwt
     JWT_TOKEN_NOT_FOUND: { isSuccess: false, code: 'JWT000', message: '토큰을 찾지 못해 사용자 인증을 할 수 없습니다.' },
     JWT_TOKEN_WRONG: { isSuccess: false, code: 'JWT001', message: '잘못된 토큰입니다.' },
     JWT_TOKEN_EXPIRED: { isSuccess: false, code: 'JWT002', message: '토큰이 만료되었습니다.' },
-    JWT_REFRESH_TOKEN_EXPIRED: { isSuccess: false, code: 'JWT002', message: 'Refresh 토큰이 만료되었습니다.' },
+    JWT_ACCESS_TOKEN_EXPIRESIN: { isSuccess: false, code: 'JWT003', message: 'Access 토큰이 만료되었습니다.' },
 
-    JWT_GET_ACCESS_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT003', message: 'Access 토큰이 발급되었습니다. ' },
-    JWT_GET_REFRESH_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT003', message: 'Refresh 토큰이 발급되었습니다. ' },
+    JWT_GET_ACCESS_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT004', message: 'Access 토큰이 발급되었습니다. ' },
+  
     // create err
     PARAMETER_IS_EMPTY: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'NOTICE4002', message: '필수 내용이 누락되었습니다.' },
-    CREATION_FAILED: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'NOTICE4003', message: '생성을 실패하였습니다.' },
 
     // common err
     BAD_REQUEST: { isSuccess: false, code: 'COMMON001', message: '잘못된 요청입니다.' },

@@ -6,7 +6,7 @@ const baseResponse = require('../../config/response.status.js');
 exports.like = async (req, res, next) => {
     try {
         const post_id = req.params.post_id;
-        const { user_id } = req.body;
+        const user_id = res.locals.decoded.userId;
         if (!user_id || !post_id) {
             return res.send(errResponse(baseResponse.BAD_REQUEST));
         }
