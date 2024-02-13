@@ -7,9 +7,9 @@ const baseResponse = require('../../config/response.status.js');
 //회원가입
 exports.join = async (userData) => {
     try {
-        const { login_id, password, email} = userData;
+        const { login_id, password, name, email} = userData;
         // 필수 정보 누락 여부 체크
-        if (!login_id || !password || !email) {
+        if (!login_id || !password || !name || !email) {
             return errResponse(baseResponse.JOIN_EMPTY);
         }
         //회원 존재 확인
@@ -32,6 +32,7 @@ exports.join = async (userData) => {
         const newUser = await authProvider.createUser({
             login_id, 
             password: hashedPassword,
+            name,
             email
         });
         return response(baseResponse.SUCCESS_REGISTRATION, newUser);

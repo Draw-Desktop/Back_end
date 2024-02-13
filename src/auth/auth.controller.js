@@ -4,8 +4,8 @@ const baseResponse = require('../../config/response.status.js');
 
 //회원가입 요청
 exports.join = async (req, res, next) => {
-    const { login_id, password, email} = req.body;
-    const userData = { login_id, password, email};
+    const { login_id, password, name, email} = req.body;
+    const userData = { login_id, password, name, email};
 
     try {
         const result = await authService.join(userData);
