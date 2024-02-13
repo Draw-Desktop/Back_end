@@ -12,10 +12,10 @@ module.exports = {
     JWT_TOKEN_NOT_FOUND: { isSuccess: false, code: 'JWT000', message: '토큰을 찾지 못해 사용자 인증을 할 수 없습니다.' },
     JWT_TOKEN_WRONG: { isSuccess: false, code: 'JWT001', message: '잘못된 토큰입니다.' },
     JWT_TOKEN_EXPIRED: { isSuccess: false, code: 'JWT002', message: '토큰이 만료되었습니다.' },
-    JWT_REFRESH_TOKEN_EXPIRED: { isSuccess: false, code: 'JWT002', message: 'Refresh 토큰이 만료되었습니다.' },
+    JWT_ACCESS_TOKEN_EXPIRESIN: { isSuccess: false, code: 'JWT003', message: 'Access 토큰이 만료되었습니다.' },
 
-    JWT_GET_ACCESS_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT003', message: 'Access 토큰이 발급되었습니다. ' },
-    JWT_GET_REFRESH_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT003', message: 'Refresh 토큰이 발급되었습니다. ' },
+    JWT_GET_ACCESS_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT004', message: 'Access 토큰이 발급되었습니다. ' },
+    JWT_GET_REFRESH_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT005', message: 'Refresh 토큰이 발급되었습니다. ' },
 
     // common err
     BAD_REQUEST: { isSuccess: false, code: 'COMMON001', message: '잘못된 요청입니다.' },
