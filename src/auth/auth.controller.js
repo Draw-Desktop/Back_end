@@ -2,6 +2,7 @@ const authService = require('./auth.service.js');
 const authProvider = require('./auth.provider.js');
 const { response, errResponse } = require('../../config/response.js');
 const baseResponse = require('../../config/response.status.js');
+const url = require('url');
 
 //회원가입 요청
 exports.join = async (req, res, next) => {
