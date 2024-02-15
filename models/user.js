@@ -11,12 +11,16 @@ module.exports = class User extends Sequelize.Model {
                     autoIncrement: true,
                 },
                 login_id: {
-                    type: Sequelize.INTEGER,
+                    type: Sequelize.STRING,
                     allowNull: false,
                 },
                 password: {
                     type: Sequelize.STRING,
                     allowNull: false,
+                },
+                name: {
+                    type: Sequelize.STRING,
+                    allowNull: true,
                 },
                 email: {
                     type: Sequelize.STRING,
@@ -54,9 +58,9 @@ module.exports = class User extends Sequelize.Model {
     }
     static associate(db) {
         // User 모델과 LikePost 모델 간의 일대다 관계 설정
-        User.hasMany(db.LikePost, { foreignKey: 'userId' });
+        User.hasMany(db.LikePost, { foreignKey: 'user_id' });
 
         // User 모델과 Post 모델 간의 일대다 관계 설정
-        User.hasMany(db.Post, { foreignKey: 'userId' });
+        User.hasMany(db.Post, { foreignKey: 'user_id' });
     }
 };
