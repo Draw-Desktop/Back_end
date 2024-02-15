@@ -4,7 +4,7 @@ module.exports = {
     // success
     SUCCESS: { isSuccess: true, code: 2000, message: 'success!' },
     SUCCESS_CREATE_HELP: { isSuccess: true, code: 2002, message: '요청이 성공적으로 접수되었습니다.' },
-    USER_CAN_SIGNUP: { isSuccess: true, code: 2001, message: '가입이 가능한 아이디입니다.' },
+    USER_CAN_SIGNUP: { isSuccess: true, code: 2001, message: '사용 가능한 닉네임입니다.' },
     SUCCESS_REGISTRATION: { isSuccess: true, code: 2002, message: '회원가입이 성공적으로 완료되었습니다.' },
     SUCCESS_LOAD_ALL_CATEGORY: { isSuccess: true, code: 2003, message: '전체 카테고리 게시물을 성공적으로 불러왔습니다.' },
     SUCCESS_LOAD_POPULAR_CATEGORY: { isSuccess: true, code: 2004, message: '인기 카테고리 게시물을 성공적으로 불러왔습니다.' },
@@ -23,7 +23,7 @@ module.exports = {
     JWT_ACCESS_TOKEN_EXPIRESIN: { isSuccess: false, code: 'JWT003', message: 'Access 토큰이 만료되었습니다.' },
 
     JWT_GET_ACCESS_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT004', message: 'Access 토큰이 발급되었습니다. ' },
-  
+
     // create err
     PARAMETER_IS_EMPTY: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'NOTICE4002', message: '필수 내용이 누락되었습니다.' },
 
@@ -45,6 +45,7 @@ module.exports = {
         message: '비밀번호는 8자 이상이어야 하며, 영문과 숫자, 특수문자(!@#$%^&*_-)가 섞여 있어야 합니다.',
     },
     WRONG_PASSWORD: { isSuccess: false, code: 'MEMBER4006', message: '비밀번호가 틀렸습니다.' },
+    NICKNAME_ALREADY_EXISTS: { isSuccess: false, code: 'MEMBER4007', message: '이미 존재하는 닉네임입니다.' },
 
     // post err
     CREATION_FAILED: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'POST4001', message: '생성을 실패하였습니다.' },

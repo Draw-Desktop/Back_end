@@ -7,9 +7,9 @@ const jwtUtil = require('../../util/jwtUtil.js');
 //회원가입
 exports.join = async (userData) => {
     try {
-        const { login_id, password, name, email} = userData;
+        const { login_id, password, name, nickname, email} = userData;
         // 필수 정보 누락 여부 체크
-        if (!login_id || !password || !name || !email) {
+        if (!login_id || !password || !name || !nickname || !email) {
             return errResponse(baseResponse.JOIN_EMPTY);
         }
         //회원 존재 확인
@@ -33,6 +33,7 @@ exports.join = async (userData) => {
             login_id, 
             password: hashedPassword,
             name,
+            nickname,
             email
         });
         return response(baseResponse.SUCCESS_REGISTRATION, newUser);

@@ -8,6 +8,13 @@ exports.checkLoginIdExist = async (login_id) => {
     if (EX_USER) return EX_USER;
     else return null;
 };
+//닉네임 중복 확인
+exports.checkNickNameExist = async (query) => {
+    const nickname = query.nickname;
+    const EX_USER = await User.findOne({ where: { nickname: nickname } });
+    if (EX_USER) return EX_USER;
+    else return null;
+};
 //User테이블에 사용자 추가
 exports.createUser = async (userData) => {
     try {
