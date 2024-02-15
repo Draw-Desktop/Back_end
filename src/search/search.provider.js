@@ -11,6 +11,6 @@ exports.getCategory = async (query) => {
 };
 
 exports.getUser = async (query) => {
-    const loginId = query.nickname;
+    const nickname = query.nickname;
     return searchDto.searchUserResponseDTO(nickname);
 };

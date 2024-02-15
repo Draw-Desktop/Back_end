@@ -45,6 +45,7 @@ module.exports = {
         message: '비밀번호는 8자 이상이어야 하며, 영문과 숫자, 특수문자(!@#$%^&*_-)가 섞여 있어야 합니다.',
     },
     WRONG_PASSWORD: { isSuccess: false, code: 'MEMBER4006', message: '비밀번호가 틀렸습니다.' },
+    NICKNAME_ALREADY_EXISTS: { isSuccess: false, code: 'MEMBER4007', message: '이미 존재하는 닉네임입니다.' },
 
     // post err
     CREATION_FAILED: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'POST4001', message: '생성을 실패하였습니다.' },
