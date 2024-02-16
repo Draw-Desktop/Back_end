@@ -15,6 +15,7 @@ module.exports = {
     SUCCESS_SEARCH_USER: { isSuccess: true, code: 2009, message: '작성자 검색으로 게시물을 불러왔습니다.' },
     SUCCESS_CREATE_LIKE: { isSuccess: true, code: 2010, message: '좋아요를 눌렀습니다.' },
     SUCCESS_DELETE_LIKE: { isSuccess: true, code: 2011, message: '좋아요를 취소했습니다.' },
+    SUCCESS_LOGOUT: { isSuccess: true, code: 2012, message: '로그아웃에 성공했습니다.' },
 
     //jwt
     JWT_TOKEN_NOT_FOUND: { isSuccess: false, code: 'JWT000', message: '토큰을 찾지 못해 사용자 인증을 할 수 없습니다.' },
