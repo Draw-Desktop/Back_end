@@ -7,4 +7,6 @@ module.exports = function (app) {
     app.get('/auth/nick_name', authController.checkNickName);
     // 3.로그인
     app.post('/auth/login', authController.login);
+    // 4.로그아웃
+    // app.get('/auth/logout', verifyAToken, authController.logout);
 };

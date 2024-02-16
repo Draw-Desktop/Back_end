@@ -23,7 +23,7 @@ exports.getAllPostLikeLengthResponseDTO = async (post_id) => {
     });
 
     if (EX_LIKE === null) return 0;
-    else return EX_LIKE;
+    else return parseInt(EX_LIKE);
 };
 
 //사용자가 좋아요 누른 게시물 전부 받아오기
