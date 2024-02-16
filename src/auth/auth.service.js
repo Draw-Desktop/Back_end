@@ -68,6 +68,17 @@ exports.login = async (login_id, password) => {
     }
 };
 
+//로그아웃
+// exports.logout = async (user_id) => {
+//     try {
+//         user = checkUserIdExist(user_id);
+
+//         return user.user_id
+//     } catch (error) {
+//         console.error(error);
+//     }
+// };
+
 //아이디 유효성 검사
 const isValidLoginId = (login_id) => {
     // 아이디는 4~12글자로 이루어진 영어 대소문자와 숫자로만 구성

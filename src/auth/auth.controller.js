@@ -11,7 +11,7 @@ exports.join = async (req, res, next) => {
 
     try {
         const result = await authService.join(userData);
-        return res.send(response(baseResponse.SUCCESS, result));
+        return res.send(response(result));
     } catch (error) {
         console.error(error);
         res.status(400).json({ success: false, message: error.message });
@@ -47,3 +47,15 @@ exports.login = async (req, res, next) => {
         return next(error);
     }
 };
+
+//로그아웃
+// exports.login = async (req, res, next) => {
+//     try {
+//         const user_id = res.locals.decoded.userId;
+//         const result = await authService.logout(user_id);
+//         return res.send(response(baseResponse.SUCCESS_LOGOUT, result));
+//     } catch (error) {
+//         console.error(error);
+//         return next(error);
+//     }
+// };
