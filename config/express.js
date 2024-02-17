@@ -43,6 +43,7 @@ module.exports = function () {
     require('../src/help/help.route.js')(app);
     require('../src/popular/popular.route.js')(app);
     require('../src/post/post.route.js')(app);
+    require('../src/category/category.route')(app);
 
     // error handling
     app.use((req, res, next) => {
