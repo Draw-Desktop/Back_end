@@ -21,3 +21,25 @@ exports.postUpload = async (req, res, next) => {
         return next(error);
     }
 };
+
+exports.postShow = async (req, res, next) => {
+    try {
+        const post_id = req.params.post_id;
+        const getPost = await postProvider.getPost(post_id);
+        return res.send(response(baseResponse.SUCCESS, getPost));
+    } catch (error) {
+        console.error('Error controler post:', error);
+        res.status(400).json({ success: false, message: error.message });
+    }
+};
+
+exports.postUploader = async (req, res, next) => {
+    try {
+        const user_id = req.params.user_id;
+        const getUploader = await postProvider.getUploader(user_id);
+        return res.send(response(baseResponse.SUCCESS, getUploader));
+    } catch (error) {
+        console.error('Error controler uploader:', error);
+        res.status(400).json({ success: false, message: error.message });
+    }
+};
