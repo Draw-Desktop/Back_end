@@ -21,7 +21,7 @@ exports.join = async (req, res, next) => {
 //닉네임 유효성 검사
 exports.checkNickName = async (req, res, next) => {
     try {
-        const getNickName = await authProvider.checkNickNameExist(url.parse(req.url, true).query);
+        const getNickName = await authProvider.checkNickNameExist(url.parse(req.url, true).query.nickname);
         if(!getNickName){
             return res.send(response(baseResponse.USER_CAN_SIGNUP));
         } else {

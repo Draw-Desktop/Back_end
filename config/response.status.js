@@ -15,6 +15,8 @@ module.exports = {
     SUCCESS_SEARCH_USER: { isSuccess: true, code: 2009, message: '작성자 검색으로 게시물을 불러왔습니다.' },
     SUCCESS_CREATE_LIKE: { isSuccess: true, code: 2010, message: '좋아요를 눌렀습니다.' },
     SUCCESS_DELETE_LIKE: { isSuccess: true, code: 2011, message: '좋아요를 취소했습니다.' },
+    SUCCESS_LOGOUT: { isSuccess: true, code: 2012, message: '로그아웃에 성공했습니다.' },
+    SUCCESS_CREATE_POST: { isSuccess: true, code: 2013, message: '게시물이 성공적으로 작성되었습니다.' },
 
     //jwt
     JWT_TOKEN_NOT_FOUND: { isSuccess: false, code: 'JWT000', message: '토큰을 찾지 못해 사용자 인증을 할 수 없습니다.' },
@@ -23,9 +25,6 @@ module.exports = {
     JWT_ACCESS_TOKEN_EXPIRESIN: { isSuccess: false, code: 'JWT003', message: 'Access 토큰이 만료되었습니다.' },
 
     JWT_GET_ACCESS_TOKEN_SUCCESS: { isSuccess: true, code: 'JWT004', message: 'Access 토큰이 발급되었습니다. ' },
-
-    // create err
-    PARAMETER_IS_EMPTY: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'NOTICE4002', message: '필수 내용이 누락되었습니다.' },
 
     // common err
     BAD_REQUEST: { isSuccess: false, code: 'COMMON001', message: '잘못된 요청입니다.' },
@@ -49,6 +48,7 @@ module.exports = {
 
     // post err
     CREATION_FAILED: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'POST4001', message: '생성을 실패하였습니다.' },
+    PARAMETER_IS_EMPTY: { status: StatusCodes.BAD_REQUEST, isSuccess: false, code: 'POST4002', message: '필수 내용이 누락되었습니다.' },
 
     // like err
     LIKE_ALREADY_EXISTS: { isSuccess: false, code: 'LIKE4001', message: '이미 좋아요를 눌렀습니다.' },

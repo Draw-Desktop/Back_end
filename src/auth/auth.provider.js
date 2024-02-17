@@ -9,8 +9,7 @@ exports.checkLoginIdExist = async (login_id) => {
     else return null;
 };
 //닉네임 중복 확인
-exports.checkNickNameExist = async (query) => {
-    const nickname = query.nickname;
+exports.checkNickNameExist = async (nickname) => {
     const EX_USER = await User.findOne({ where: { nickname: nickname } });
     if (EX_USER) return EX_USER;
     else return null;
