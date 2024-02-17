@@ -21,3 +21,14 @@ exports.postUpload = async (req, res, next) => {
         return next(error);
     }
 };
+
+exports.postShow = async (req, res, next) => {
+    try {
+        const post_id = req.params.post_id;
+        const getPost = await postProvider.getPost(post_id);
+        return res.send(response(baseResponse.SUCCESS, getPost));
+    } catch (error) {
+        console.error('Error controler notice:', error);
+        res.status(400).json({ success: false, message: error.message });
+    }
+};

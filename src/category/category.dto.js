@@ -13,7 +13,7 @@ exports.getAllCategories = async () => {
     const seven = new Date(year, month, day - 7);
 
     const categories = await Category.findAll();
-   
+
 
     const EX_categories = await Promise.all(categories.map(async (category) => {
         const post = await Post.findAll({
