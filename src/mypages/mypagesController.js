@@ -26,9 +26,9 @@ exports.ModifyProfile = async function (req, res) {
         const ModifyProfileResult = await mypagesService.alterProfile(user_info);
 
         if (ModifyProfileResult)
-            return res.send(response(baseResponse.SUCCESS, ModifyProfileResult));
+            return res.send(response(baseResponse.SUCCESS_UPDATE_USER, ModifyProfileResult));
         else
-            return res.status(400).json({ success: false, message: "Modify profile failed" });
+            return res.status(400).send(response(baseResponse.NICKNAME_ALREADY_EXISTS, ModifyProfileResult));
 
     } catch (error) {
         console.error('Error in ModifyProfile controller:', error);
@@ -56,7 +56,7 @@ exports.ModifyPosting = async function (req, res) {
     const { post_id } = req.body;
     const post_info = [user_id, post_id];
     const ModifyPostingResult = await mypagesService.alterPosting(post_info);
-    return res.send(response(baseResponse.SUCCESS, ModifyPostingResult));
+    return res.send(response(baseResponse.SUCCESS_POST_DELETE, ModifyPostingResult));
 };
 
 /**
@@ -78,5 +78,5 @@ exports.ModifyLiked_posting = async function (req, res) {
     const { post_id } = req.body;
     const like_post_info = [user_id, post_id];
     const ModifyLiked_postingResult = await mypagesService.alterLiked_posting(like_post_info);
-    return res.send(response(baseResponse.SUCCESS, ModifyLiked_postingResult));
+    return res.send(response(baseResponse.SUCCESS_LIKE_DELETE, ModifyLiked_postingResult));
 };

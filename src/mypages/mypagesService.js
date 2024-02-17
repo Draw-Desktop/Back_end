@@ -12,17 +12,18 @@ exports.alterProfile = async function (user_info) {
 
     if (temp === user_info[1])
     {
-            const alterProfileResult = await mypagesDao.updateMypages(user_info);// 덮어씌운다.
-            return alterProfileResult;
+        //body nickname == db nickname : 닉네임 변경x
+        const alterProfileResult = await mypagesDao.updateMypages(user_info);// 덮어씌운다.
+        return alterProfileResult;
     }
-    else//, 안 같으면 한다.
+    else//, 닉네임 변경
     {
-        if (!getNickName)//중복이 아니면
+        if (!getNickName)//닉네임 중복이 아니면
         {
             const alterProfileResult = await mypagesDao.updateMypages(user_info);// 덮어씌운다.
             return alterProfileResult;
         }
-        else//중복이면
+        else//닉네임 중복이면
         {
             return null;
         }

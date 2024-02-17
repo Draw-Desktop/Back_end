@@ -17,6 +17,9 @@ module.exports = {
     SUCCESS_DELETE_LIKE: { isSuccess: true, code: 2011, message: '좋아요를 취소했습니다.' },
     SUCCESS_LOGOUT: { isSuccess: true, code: 2012, message: '로그아웃에 성공했습니다.' },
     SUCCESS_CREATE_POST: { isSuccess: true, code: 2013, message: '게시물이 성공적으로 작성되었습니다.' },
+    SUCCESS_UPDATE_USER: { isSuccess: true, code: 2014, message: '사용자 정보가 성공적으로 수정되었습니다.' },
+    SUCCESS_POST_DELETE: { isSuccess: true, code: 2015, message: '게시물이 성공적으로 삭제되었습니다.' },
+    SUCCESS_LIKE_DELETE: { isSuccess: true, code: 2016, message: '좋아요가 성공적으로 취소되었습니다.' },
 
     //jwt
     JWT_TOKEN_NOT_FOUND: { isSuccess: false, code: 'JWT000', message: '토큰을 찾지 못해 사용자 인증을 할 수 없습니다.' },

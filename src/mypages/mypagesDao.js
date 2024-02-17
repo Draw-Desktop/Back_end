@@ -3,16 +3,16 @@ const Post = require('../../models/post.js');
 const likePost = require('../../models/like_post.js');
 
 exports.selectMypages = async function(user_id) {
-  try {
-      const userInfo = await user.findOne({
-          where: { user_id: user_id },
-          attributes: ['nickname', 'name', 'email', 'introduction', 'profile_img']
-      });
-      return userInfo;
-  } catch (error) {
-      console.error('Error in selectMypages:', error);
-      throw error;
-  }
+    try {
+        const userInfo = await user.findOne({
+            where: { user_id: user_id },
+            attributes: ['nickname', 'name', 'email', 'introduction', 'profile_img']
+        });
+        return userInfo;
+    } catch (error) {
+        console.error('Error in selectMypages:', error);
+        throw error;
+    }
 };
 
 exports.selectPosting = async function(user_id) {
@@ -22,7 +22,7 @@ exports.selectPosting = async function(user_id) {
             where: { user_id: user_id },
             attributes: ['post_id', 'title', 'user_id', 'createdAt']
         });
-  
+
         // 각 게시물에 대한 좋아요 수를 가져오고 결과를 post_id를 기반으로 병합하여 JSON 형식으로 반환
         const mergedResult = await Promise.all(postInfo.map(async post => {
             const likeCount = await likePost.count({
@@ -36,15 +36,15 @@ exports.selectPosting = async function(user_id) {
                 like_count: likeCount
             };
         }));
-  
+
         return mergedResult;
     } catch (error) {
         console.error('Error in selectPosting:', error);
         throw error;
     }
-  };
+};
 
-  exports.selectLiked_posting = async function(user_id) {
+exports.selectLiked_posting = async function(user_id) {
     try {
         // like_post 테이블에서 user_id가 주어진 user_id와 같은 행들의 post_id 추출
         const likedPosts = await likePost.findAll({
@@ -97,7 +97,6 @@ exports.updateMypages = async function(user_info) {
                 where: { user_id: user_info[0] }
             }
         );
-        console.log('Successfully updated user information.');
         return user_info[0];
     } catch (error) {
         console.error('Error in updateMypages:', error);
@@ -113,7 +112,6 @@ exports.updatePosting = async function(post_info) {
                 post_id: post_info[1] 
             }
         });
-        console.log('Successfully deleted post.');
     } catch (error) {
         console.error('Error in deletePosting:', error);
         throw error;
@@ -128,7 +126,6 @@ exports.updateLiked_Posting = async function(like_post_info) {
                 post_id: like_post_info[1] // like_post_info 배열의 두 번째 요소가 post_id
             }
         });
-        console.log('Successfully deleted liked_post.');
     } catch (error) {
         console.error('Error in updateLiked_Posting:', error);
         throw error;
