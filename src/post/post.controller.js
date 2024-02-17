@@ -8,7 +8,6 @@ exports.postUpload = async (req, res, next) => {
     try {
         const user_id = res.locals.decoded.userId;
         const image = req.file;
-        console.log("image", image);
         if (!user_id ) {
             return res.send(errResponse(baseResponse.BAD_REQUEST));
         }

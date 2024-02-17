@@ -41,8 +41,10 @@ module.exports = function () {
     require('../src/like/like.route.js')(app);
     require('../src/search/search.route.js')(app);
     require('../src/help/help.route.js')(app);
+    require('../src/mypages/mypagesRoute.js')(app);
     require('../src/popular/popular.route.js')(app);
     require('../src/post/post.route.js')(app);
+    require('../src/category/category.route')(app);
 
     // error handling
     app.use((req, res, next) => {
