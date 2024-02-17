@@ -39,3 +39,23 @@ exports.previewPostResponseDTO = async (post_id) => {
     if (EX_POST === null) return false;
     else return EX_POST;
 };
+
+exports.getUploaderDTO = async (user_id) => {
+    const userone = await User.findOne({
+        where: {
+            user_id: user_id
+        }
+    });
+
+    const post = await Post.findAll({
+        where: {
+            user_id: user_id
+        }
+    });
+
+    userone.dataValues.post = post;
+    userone.dataValues.count = post.length;
+
+    if (userone === null) return false;
+    else return userone;
+};

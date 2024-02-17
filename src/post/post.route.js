@@ -7,4 +7,6 @@ module.exports = function (app) {
     app.post('/post/upload', verifyAToken, imageUploader.imageUploader.single('image'), postController.postUpload);
     // 2.게시물 조회하기
     app.get('/post/:post_id', postController.postShow);
+    // 3. 업로더 정보 조회
+    app.get('/post/profile/:user_id', postController.postUploader);
 };
