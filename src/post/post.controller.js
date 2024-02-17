@@ -1,4 +1,5 @@
 const postService = require('./post.service.js');
+const postProvider = require('./post.provider.js');
 const { response, errResponse } = require('../../config/response.js');
 const baseResponse = require('../../config/response.status.js');
 
