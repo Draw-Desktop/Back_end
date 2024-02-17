@@ -1,7 +1,6 @@
 const BaseError = require('../../config/error.js');
 const status = require('../../config/response.status.js');
 const Post = require('../../models/post.js');
-const Image = require('../../models/image.js');
 const Link = require('../../models/link.js');
 const Tag = require('../../models/tag.js');
 

@@ -48,12 +48,7 @@ exports.login = async (login_id, password) => {
     try {
         //학번 일치 확인
         const user = await authProvider.checkLoginIdExist(login_id);
-        console.log(user);
-        console.log('id,', user.id);
         if (!user) {
-            return errResponse(baseResponse.MEMBER_NOT_FOUND);
-        }
-        if (!user.password) {
             return errResponse(baseResponse.MEMBER_NOT_FOUND);
         }
         //비밀번호 일치 확인
