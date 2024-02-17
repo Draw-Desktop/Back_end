@@ -2,9 +2,6 @@ const Category = require('../../models/category');
 const Post = require('../../models/post');
 const { Op } = require('sequelize');
 
-
-
-
 exports.getAllCategories = async () => {
     const d = new Date();
     const year = d.getFullYear(); // 년
@@ -36,9 +33,6 @@ exports.getAllCategories = async () => {
         category.dataValues.recent = recent;
         return category;
     }));
-
-    // EX_POST_LIKE를 post.like 기준으로 내림차순으로 정렬
-    EX_categories.sort((a, b) => b.dataValues.count - a.dataValues.count);
 
     if (EX_categories === null) return false;
     else return EX_categories;
