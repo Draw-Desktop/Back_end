@@ -22,7 +22,7 @@ exports.like = async (req, res, next) => {
 exports.likeDel = async (req, res, next) => {
     try {
         const post_id = req.params.post_id;
-        const { user_id } = req.body;
+        const user_id = res.locals.decoded.userId;
         console.log("post_id", post_id);
         console.log("user_id", user_id);
         if (!user_id || !post_id) {
