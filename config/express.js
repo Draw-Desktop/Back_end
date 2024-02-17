@@ -36,7 +36,6 @@ module.exports = function () {
     app.use('/api-docs', SwaggerUi.serve, SwaggerUi.setup(specs));
 
     //router
-    require('../src/notice/notice.route')(app); //예시 라우트   notice.route.js를 통해 연결되는 route, controller, provider, service, dto, dao 는 예시이다. 추후 삭제 예정
     require('../src/auth/auth.route.js')(app);
     require('../src/like/like.route.js')(app);
     require('../src/search/search.route.js')(app);
